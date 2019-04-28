@@ -1,0 +1,3 @@
+SUBDIRS = src base64 examples include
+
+EXTRA_DIST = BENCHMARKS CHANGELOG LICENSE
