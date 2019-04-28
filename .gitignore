@@ -15,4 +15,4 @@ Makefile
 Makefile.in
 
 src/libb64.a
-base64/base64
+base64/b64

@@ -14,12 +14,16 @@ For details, see http://sourceforge.net/projects/libb64
 
 #include <stdlib.h>
 
+#ifndef PROGRAM_NAME
+#define PROGRAM_NAME "base64"
+#endif
+
 // Function which prints the usage of this executable
 void usage()
 {
 	std::cerr<< \
-		"base64: Encodes and Decodes files using base64\n" \
-		"Usage: base64 [-e|-d] [input] [output]\n" \
+		PROGRAM_NAME": Encodes and Decodes files using base64\n" \
+		"Usage: "PROGRAM_NAME" [-e|-d] [input] [output]\n" \
 		"   Where [-e] will encode the input file into the output file,\n" \
 		"         [-d] will decode the input file into the output file, and\n" \
 		"         [input] and [output] are the input and output files, respectively.\n";
@@ -28,7 +32,7 @@ void usage()
 void usage(const std::string& message)
 {
 	usage();
-	std::cerr<<"Incorrect invocation of base64:\n";
+	std::cerr<<"Incorrect invocation of "PROGRAM_NAME":\n";
 	std::cerr<<message<<std::endl;
 }
 

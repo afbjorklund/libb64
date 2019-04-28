@@ -1,12 +1,13 @@
-bin_PROGRAMS = base64
+bin_PROGRAMS = b64
 
-base64_SOURCES = base64.cc
+b64_SOURCES = base64.cc
 
 # a larger size should be faster, but takes more runtime memory
 #BUFFERSIZE = 4096
 #BUFFERSIZE = 65536
 BUFFERSIZE=16777216
 
-AM_CPPFLAGS = -I$(top_srcdir)/include -DBUFFERSIZE=$(BUFFERSIZE)
+# rename program to b64, to avoid name conflict with standard base64 from GNU coreutils
+AM_CPPFLAGS = -I$(top_srcdir)/include -DPROGRAM_NAME=\"b64\" -DBUFFERSIZE=$(BUFFERSIZE)
 
 LDADD = ../src/libb64.a
